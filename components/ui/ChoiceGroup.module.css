@@ -1,0 +1,115 @@
+/* Selectable tiles used for radio and checkbox groups in the forms (seen throughout the video). */
+.group {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.legend {
+  padding: 0;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.required {
+  color: var(--color-red);
+  margin-left: 3px;
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.tile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 8px 14px;
+  background: var(--color-white);
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-control);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-ink);
+  cursor: pointer;
+  transition:
+    border-color 0.18s,
+    background 0.18s;
+}
+
+.tile:hover {
+  border-color: var(--color-input-hover);
+}
+
+.tile:focus-within {
+  outline: 2px solid var(--color-navy);
+  outline-offset: 2px;
+}
+
+/* The selected look (navy border, tint background) is ASSUMED from the video. */
+.selected,
+.selected:hover {
+  border-color: var(--color-navy);
+  background: var(--color-navy-tint);
+}
+
+.invalid {
+  border-color: var(--color-error);
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mark {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--color-line-strong);
+  background: var(--color-white);
+}
+
+.radio {
+  border-radius: 50%;
+}
+
+.check {
+  border-radius: 4px;
+}
+
+.selected .mark {
+  border-color: var(--color-navy);
+  background: var(--color-navy);
+  box-shadow: inset 0 0 0 3px var(--color-white);
+}
+
+.selected .check {
+  box-shadow: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2 5 8.7l4.5-5' stroke='white' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hint {
+  margin: 6px 0 0;
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--color-faint);
+}
+
+.error {
+  margin: 6px 0 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--color-error);
+}

@@ -1,0 +1,7 @@
+/* Original .wrap: max width 1320px, side padding 28 / 22 / 16 by breakpoint. */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}

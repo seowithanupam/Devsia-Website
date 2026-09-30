@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550" role="img" aria-label="Placeholder property photo">
+<rect width="800" height="550" fill="#E9EDF3"/>
+<rect y="330" width="800" height="220" fill="#DCE3EC"/>
+<g fill="none" stroke="#B6C1D0" stroke-width="3"><path d="M120 330V200h560v130"/><path d="M120 200l280-90 280 90"/><rect x="340" y="230" width="120" height="100" fill="#CFD7E2"/></g><circle cx="600" cy="120" r="34" fill="#F1F4F8"/>
+<g font-family="system-ui,sans-serif" text-anchor="middle"><text x="400" y="500" font-size="20" font-weight="700" fill="#57616F">Mock photo</text><text x="400" y="526" font-size="14" fill="#69737F">Replaced by the CRM image later</text></g>
+</svg>

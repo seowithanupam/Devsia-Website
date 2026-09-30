@@ -1,0 +1,58 @@
+/* Original .nav a: 14px, 600, muted, 2px red underline that grows on hover and stays on the active link. */
+.list {
+  display: flex;
+  gap: 26px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.column {
+  flex-direction: column;
+  gap: 4px;
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  padding: 6px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.link:hover,
+.active {
+  color: var(--color-navy);
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 2px;
+  background: var(--color-red);
+  transform: scaleX(0);
+  transition: transform 0.26s var(--ease);
+}
+
+.link:hover::after,
+.active::after {
+  transform: scaleX(1);
+}
+
+.column .link {
+  display: block;
+  padding: 12px 0;
+  font-size: 16px;
+}
+
+.column .link::after {
+  display: none;
+}
+
+.column .active {
+  color: var(--color-red);
+}

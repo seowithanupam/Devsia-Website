@@ -1,0 +1,63 @@
+.panel {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding: 48px 24px;
+  text-align: center;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  background: var(--color-white);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-ok-tint);
+  color: var(--color-ok);
+}
+
+.iconError {
+  background: var(--color-red-tint);
+  color: var(--color-red);
+}
+
+.iconNeutral {
+  background: var(--color-navy-tint);
+  color: var(--color-navy);
+}
+
+.title {
+  margin: 4px 0 0;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.text {
+  margin: 0;
+  max-width: 44ch;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--color-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.alert {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: var(--radius-control);
+  background: var(--color-red-tint);
+  color: var(--color-red-hover);
+  font-size: 13px;
+  line-height: 1.5;
+}

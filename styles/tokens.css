@@ -1,0 +1,109 @@
+/*
+ * DevSia design tokens.
+ *
+ * Every value in the "Original design" groups is copied from the recovered original
+ * Home design artifact (September 2026). Names are readable versions of the
+ * original short names (noted in comments) so the two can be compared.
+ * Values in the "ASSUMED" group are NOT from any source and are marked for review.
+ *
+ * Breakpoints cannot be CSS variables inside media queries. They are the literal
+ * values 1199px (tablet and below) and 809px (mobile) and are mirrored in
+ * lib/design/breakpoints.ts.
+ */
+:root {
+  color-scheme: light;
+
+  /* ---- Original design: brand colors ---- */
+  --color-navy: #0A2B5C;          /* --navy */
+  --color-navy-hover: #12457E;    /* --navy6 */
+  --color-navy-tint: #EEF3FA;     /* --navy1 */
+  --color-red: #D6122B;           /* --red */
+  --color-red-hover: #B00E23;     /* --red6 */
+  --color-red-tint: #FDEDEF;      /* --red1 */
+
+  /* ---- Original design: text, lines, surfaces ---- */
+  --color-ink: #111820;           /* --ink */
+  --color-muted: #57616F;         /* --muted */
+  --color-faint: #69737F;         /* --faint */
+  --color-line: #E4E9F0;          /* --line */
+  --color-line-strong: #CFD7E2;   /* --ls */
+  --color-surface-alt: #F6F8FB;   /* --bg */
+  --color-white: #FFFFFF;
+
+  /* ---- Original design: status colors ---- */
+  --color-ok: #0F7B4F;            /* --ok */
+  --color-ok-tint: #E9F6F0;       /* --ok1 */
+  --color-gold: #9A6700;          /* --gold */
+  --color-gold-tint: #FDF7E6;     /* --gold1 */
+
+  /* ---- Original design: one-off literals used in the Home page ---- */
+  --color-footer-bg: #08213F;
+  --color-footer-ink: #D7E0EC;
+  --color-footer-accent: #FF8095;         /* "Sia" in the footer logo */
+  --color-navy-label: #8FB3E0;            /* labels on navy sections */
+  --color-live: #4ADE80;                  /* live-count dot in the hero pill */
+  --color-input-hover: #B6C1D0;           /* input hover border */
+  --color-card-hover-border: #D3DCE8;     /* card hover border */
+  --color-image-placeholder: #E9EDF3;     /* image loading background */
+
+  /* ---- Original design: hero overlay ---- */
+  --hero-veil: linear-gradient(
+    100deg,
+    rgba(6, 26, 56, 0.94) 0%,
+    rgba(6, 26, 56, 0.76) 46%,
+    rgba(6, 26, 56, 0.34) 100%
+  );
+
+  /* ---- Original design: radius ---- */
+  --radius-card: 14px;            /* --r: cards and panels */
+  --radius-control: 9px;          /* --rc: buttons, inputs, locality tiles */
+  --radius-badge: 6px;
+  --radius-check: 5px;
+  --radius-pill: 999px;
+
+  /* ---- Original design: shadows ---- */
+  --shadow-sm: 0 1px 2px rgba(17, 24, 32, 0.05);      /* --sh */
+  --shadow-md: 0 6px 20px rgba(17, 24, 32, 0.09);     /* --shm */
+  --shadow-lg: 0 20px 48px rgba(17, 24, 32, 0.13);    /* --shl */
+  --shadow-focus: 0 0 0 3px rgba(10, 43, 92, 0.12);   /* input focus ring */
+
+  /* ---- Original design: motion ---- */
+  --ease: cubic-bezier(0.2, 0.8, 0.25, 1);
+  --dur-fast: 0.2s;
+  --dur-card: 0.32s;
+  --dur-image: 0.75s;
+
+  /* ---- Original design: type ---- */
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --selection: rgba(10, 43, 92, 0.14);
+
+  /* ---- Original design: layout (desktop values; responsive overrides below) ---- */
+  --container-max: 1320px;
+  --gutter: 28px;
+  --section-y: 88px;
+  --grid-gap: 22px;
+  --header-h: 74px;
+
+  /* ---- ASSUMED: not in any source. Review before launch. ---- */
+  --color-skeleton-highlight: #F1F4F8;    /* shimmer highlight; video shows grey-blue blocks */
+  --color-error: var(--color-red);        /* field error text; only a form-level error was seen */
+  --shadow-error-focus: 0 0 0 3px rgba(214, 18, 43, 0.14);
+}
+
+/* Tablet and below (original: max-width 1199px) */
+@media (max-width: 1199px) {
+  :root {
+    --gutter: 22px;
+    --section-y: 64px;
+    --grid-gap: 18px;
+  }
+}
+
+/* Mobile (original: max-width 809px) */
+@media (max-width: 809px) {
+  :root {
+    --gutter: 16px;
+    --section-y: 48px;
+    --grid-gap: 14px;
+  }
+}

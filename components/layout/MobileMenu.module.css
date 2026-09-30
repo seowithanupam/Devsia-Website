@@ -1,0 +1,67 @@
+.wrapper {
+  position: static;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-control);
+  background: var(--color-white);
+  color: var(--color-navy);
+  cursor: pointer;
+}
+
+.toggle:hover {
+  border-color: var(--color-navy);
+  background: var(--color-navy-tint);
+}
+
+/* The panel drops from the bottom edge of the header bar. */
+.panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  display: grid;
+  gap: 8px;
+  padding: 8px var(--gutter) 24px;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-line);
+  box-shadow: var(--shadow-md);
+}
+
+.panel {
+  max-height: calc(100dvh - var(--header-h));
+  overflow-y: auto;
+}
+
+/* Comfortable tap targets for the menu links (NavLinks pads them 6px, which is too small for touch). */
+.panel nav a {
+  display: block;
+  padding: 12px 0;
+}
+
+.panel[hidden] {
+  display: none;
+}
+
+.phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 0;
+  font-size: 15px;
+  font-weight: 700;
+  border-top: 1px solid var(--color-line);
+}
+
+.actions {
+  display: grid;
+  gap: 10px;
+}

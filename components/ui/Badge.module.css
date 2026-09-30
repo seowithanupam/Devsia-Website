@@ -1,0 +1,37 @@
+/* Original .bdg: 25px tall, 10.5px, 800, uppercase, 6px radius. */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  height: 25px;
+  padding: 0 9px;
+  border-radius: var(--radius-badge);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.navy {
+  background: var(--color-navy);
+  color: var(--color-white);
+}
+.tint {
+  background: var(--color-navy-tint);
+  color: var(--color-navy);
+}
+.ok {
+  background: var(--color-ok-tint);
+  color: var(--color-ok);
+}
+.red {
+  background: var(--color-red-tint);
+  color: var(--color-red);
+}
+.gold {
+  background: var(--color-gold-tint);
+  color: var(--color-gold);
+}
+.outline {
+  background: var(--color-white);
+  color: var(--color-muted);
+  border: 1px solid var(--color-line);
+}

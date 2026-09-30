@@ -1,0 +1,69 @@
+/*
+ * Logo frame. The supplied file is 1254 x 1254 px; its wordmark occupies x 125-1134, y 419-749.
+ * The frame shows x 115-1144 and y 409-759 (a 10 px margin on every side): 1029 x 350 px.
+ * The image is positioned with percentages of that frame, so it scales at any size with no distortion.
+ *   width  = 1254 / 1029 = 121.866%      left = -115 / 1029 = -11.176%
+ *   height = 1254 /  350 = 358.286%      top  = -409 /  350 = -116.857%
+ */
+.logo {
+  --logo-h: 42px;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  line-height: 0;
+}
+
+.frame {
+  position: relative;
+  display: block;
+  height: var(--logo-h);
+  aspect-ratio: 1029 / 350;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  max-width: none;
+  width: 121.866%;
+  height: 358.286%;
+  left: -11.176%;
+  top: -116.857%;
+  /* The JPEG background is 254/255 white, not pure white. Multiply blends it into a white header. Logo colours are untouched. */
+  mix-blend-mode: multiply;
+}
+
+/* Dark footer: the same file on a white plate, because the navy wordmark is invisible on navy. */
+.plate {
+  --logo-h: 40px;
+  padding: 12px 18px;
+  border-radius: var(--radius-control);
+  background: var(--color-white);
+}
+
+@media (max-width: 1199px) {
+  .logo {
+    --logo-h: 38px;
+  }
+  .plate {
+    --logo-h: 38px;
+  }
+}
+
+@media (max-width: 809px) {
+  .logo {
+    --logo-h: 34px;
+    /* 44px tall tap area around the 34px logo */
+    min-height: 44px;
+  }
+  .plate {
+    --logo-h: 36px;
+    padding: 10px 14px;
+  }
+}
+
+/* Very narrow phones (below 360px) keep the header bar from overflowing. */
+@media (max-width: 359px) {
+  .logo {
+    --logo-h: 30px;
+  }
+}

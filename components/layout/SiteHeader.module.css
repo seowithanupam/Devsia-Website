@@ -1,0 +1,70 @@
+/* Original header: 74px tall, white, 1px bottom border, max width 1320 with the standard gutter. */
+.header {
+  position: relative;
+  z-index: 30;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  height: var(--header-h);
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.nav {
+  display: flex;
+  margin-left: 6px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.phone {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* A round outline button with a heart, like the header icon in the video. */
+.heart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-control);
+  color: var(--color-navy);
+}
+
+.heart:hover {
+  border-color: var(--color-navy);
+  background: var(--color-navy-tint);
+  color: var(--color-red);
+}
+
+@media (max-width: 809px) {
+  .bar {
+    gap: 12px;
+  }
+  .heart {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Very small screens: the enquiry button moves into the menu so the bar never overflows. */
+@media (max-width: 479px) {
+  .enquire {
+    display: none;
+  }
+}

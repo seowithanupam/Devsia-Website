@@ -1,0 +1,141 @@
+/* Form controls, ported from the original design artifact (.in, .sel, .fl). */
+.field {
+  display: block;
+}
+
+.labelText {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-muted);
+  margin-bottom: 6px;
+}
+
+/* The asterisk color is INFERRED from the video (red on required labels). */
+.required {
+  color: var(--color-red);
+  margin-left: 3px;
+}
+
+.control {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  background: var(--color-white);
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-control);
+  font-size: 14.5px;
+  color: var(--color-ink);
+  transition:
+    border-color 0.18s,
+    box-shadow 0.18s;
+}
+
+.control::placeholder {
+  color: var(--color-faint);
+}
+
+.control:hover {
+  border-color: var(--color-input-hover);
+}
+
+.control:focus {
+  outline: none;
+  border-color: var(--color-navy);
+  box-shadow: var(--shadow-focus);
+}
+
+.control:disabled {
+  background: var(--color-surface-alt);
+  cursor: not-allowed;
+}
+
+.control.invalid,
+.control.invalid:hover {
+  border-color: var(--color-error);
+}
+.control.invalid:focus {
+  box-shadow: var(--shadow-error-focus);
+}
+
+.select {
+  appearance: none;
+  padding-right: 34px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' stroke='%2357616F' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+/* Hint text under a control. Size and color match the small hints seen in the video. */
+.hint {
+  margin: 6px 0 0;
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--color-faint);
+}
+
+/* ASSUMED: field-level error text. The video only shows a form-level error above the button. */
+.error {
+  margin: 6px 0 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--color-error);
+}
+
+/* Checkbox row (original: flex, 10px gap, 18px box with a 1.5px border and 5px radius). */
+.checkRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.box {
+  appearance: none;
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  border: 1.5px solid var(--color-line-strong);
+  border-radius: var(--radius-check);
+  background: var(--color-white);
+  cursor: pointer;
+  transition:
+    background 0.18s,
+    border-color 0.18s;
+}
+
+/* The checked look is ASSUMED from the video (navy fill with a white tick). */
+.box:checked {
+  border-color: var(--color-navy);
+  background-color: var(--color-navy);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2 5 8.7l4.5-5' stroke='white' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px;
+}
+
+.box.invalid {
+  border-color: var(--color-error);
+}
+
+.checkText {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+.textarea {
+  height: auto;
+  min-height: 110px;
+  padding: 12px 14px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+/* iOS Safari zooms the page when a focused field is under 16px. Phones and small tablets use 16px. */
+@media (max-width: 809px) {
+  .control {
+    font-size: 16px;
+  }
+}

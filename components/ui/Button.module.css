@@ -1,0 +1,129 @@
+/* Button, ported from the original design artifact (.b, .bp, .br, .bo, .bg2, .sm). */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 46px;
+  padding: 0 22px;
+  border-radius: var(--radius-control);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition:
+    background var(--dur-fast) var(--ease),
+    border-color var(--dur-fast),
+    color var(--dur-fast),
+    box-shadow var(--dur-fast);
+}
+
+.sm {
+  height: 38px;
+  padding: 0 14px;
+  font-size: 13px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/*
+ * Colors are set for :hover as well because the global link rule (a:hover turns red)
+ * would otherwise recolor link-buttons. The original design has this quirk;
+ * here the label color stays stable.
+ */
+.primary,
+.primary:hover {
+  color: var(--color-white);
+}
+.primary {
+  background: var(--color-navy);
+}
+.primary:hover {
+  background: var(--color-navy-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.red,
+.red:hover {
+  color: var(--color-white);
+}
+.red {
+  background: var(--color-red);
+}
+.red:hover {
+  background: var(--color-red-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.outline,
+.outline:hover {
+  color: var(--color-navy);
+}
+.outline {
+  background: var(--color-white);
+  border-color: var(--color-line-strong);
+}
+.outline:hover {
+  border-color: var(--color-navy);
+  background: var(--color-navy-tint);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--color-muted);
+}
+.ghost:hover {
+  color: var(--color-navy);
+  background: var(--color-navy-tint);
+}
+
+/* White button with red text, used on the red associate strip. */
+.onRed,
+.onRed:hover {
+  color: var(--color-red);
+  background: var(--color-white);
+}
+.onRed {
+  white-space: nowrap;
+}
+
+/* ASSUMED: the video shows a muted disabled state while "Sending..." is displayed. */
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 809px) {
+  .btn {
+    height: 50px;
+  }
+  .sm {
+    height: 40px;
+  }
+}
+
+/* Touch widths: small buttons grow to the 44px minimum tap size. */
+@media (max-width: 809px) {
+  .sm {
+    height: 44px;
+  }
+}

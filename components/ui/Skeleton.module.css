@@ -1,0 +1,25 @@
+/*
+ * Loading placeholder. The video shows light grey-blue blocks while pages load.
+ * The shimmer itself is ASSUMED; its exact look was not recoverable.
+ */
+.skeleton {
+  display: block;
+  border-radius: var(--radius-control);
+  background: linear-gradient(
+    90deg,
+    var(--color-image-placeholder) 0%,
+    var(--color-skeleton-highlight) 50%,
+    var(--color-image-placeholder) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}

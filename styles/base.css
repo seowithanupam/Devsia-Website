@@ -1,0 +1,64 @@
+/* Base reset and element defaults, ported from the original design artifact. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-white);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-navy);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-red);
+}
+
+::selection {
+  background: var(--selection);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-navy);
+  outline-offset: 2px;
+}
+
+input,
+select,
+button,
+textarea {
+  font-family: inherit;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.028em;
+  margin: 0;
+}
+
+/*
+ * Reduced motion. The original sets 1ms durations. Iteration count is also
+ * forced to 1 so infinite animations (spinners, skeleton shimmer) do not flicker.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}

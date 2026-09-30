@@ -1,0 +1,33 @@
+/* Original .sec: 88px vertical padding, 64px on tablet, 48px on mobile. */
+.section {
+  padding: var(--section-y) 0;
+}
+
+/* Alternate background with top and bottom borders (upcoming projects). */
+.tint {
+  background: var(--color-surface-alt);
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+}
+
+/* Solid navy band (Why DevSia). */
+.navy {
+  background: var(--color-navy);
+  color: var(--color-white);
+}
+
+/* Solid red band (associate strip). */
+.red {
+  background: var(--color-red);
+  color: var(--color-white);
+}
+
+/* Fixed paddings used inline in the original (Why DevSia 76px, associate strip 44px). */
+.snug {
+  padding-top: 76px;
+  padding-bottom: 76px;
+}
+.tight {
+  padding-top: 44px;
+  padding-bottom: 44px;
+}

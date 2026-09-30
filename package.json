@@ -1,0 +1,46 @@
+{
+  "name": "devsia-website",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DevSia website rebuild. Phase 3: backend foundation, MongoDB and admin CMS.",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:check": "node --env-file=.env.local scripts/db-check.mjs",
+    "test:db": "node --env-file=.env.local scripts/run-db-tests.mjs"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.8.0",
+    "@vercel/blob": "^1.1.1",
+    "bcryptjs": "^3.0.2",
+    "mongoose": "^8.9.0",
+    "next": "^16.0.0",
+    "next-auth": "^5.0.0-beta.29",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-redux": "^9.2.0",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^16.0.0",
+    "jsdom": "^26.0.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0"
+  }
+}
